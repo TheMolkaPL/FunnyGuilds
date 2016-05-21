@@ -31,6 +31,8 @@ public class IOUtils {
 		try {
 			URL url = new URL(s);
 			URLConnection con = url.openConnection();
+			con.setRequestProperty("User-Agent", "Mozilla/5.0");
+			
 			InputStream in = con.getInputStream();
 			String encoding = con.getContentEncoding();
 			encoding = encoding == null ? "UTF-8" : encoding;
