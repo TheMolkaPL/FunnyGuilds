@@ -21,8 +21,9 @@ public class PlayerListManager {
 	private static boolean patch;
 
 	public static void updatePlayers(){
-		for(Player player : Bukkit.getOnlinePlayers()){
-			User.get(player).getPlayerList().send();
+		for (User user : UserUtils.getUsers()) {
+			if(u.getName() == null) continue; // nie wiem czy to nie jest zbedne
+			user.getPlayerList().send();
 		}
 	}
 	
